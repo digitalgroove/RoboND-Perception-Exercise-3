@@ -61,8 +61,9 @@ y_train = np.array(label_list)
 encoder = LabelEncoder()
 y_train = encoder.fit_transform(y_train)
 
-# Create classifier
+# Create classifier, different kernels are specified by keyword kernel at initialization
 clf = svm.SVC(kernel='linear')
+#clf = svm.SVC(kernel='rbf') # Radial Basis Functions Kernel
 
 # Set up 5-fold cross-validation
 kf = cross_validation.KFold(len(X_train),
